@@ -1,0 +1,39 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'mainapp/navbar.html' %}
+
+<!-- ======= Portfolio Section ======= -->
+
+<br><br><br><br>
+<section id="portfolio" class="section-bg">
+  <header class="section-header">
+    <h3 class="section-title">All Activities</h3>
+  </header>
+    <div class="container" data-aos="fade-up" data-aos-display="100">
+      <div class="row">
+        {% for post in it  %}
+        <div class="col-lg-4 card-group">
+          <div class="card mt-5">
+            <a href="{% url 'mainapp:details' post.id %}">
+              <img src="{{post.image.url}}" class="card-img-top" alt="" style="height:200px;width:100%;">
+            </a>
+            <div class="card-body">
+              <a href="{% url 'mainapp:details' post.id %}">
+                <h4 class="card-title" style="color: #1b3956; text-decoration:center;">{{post.title|lower}}</h4>
+              </a>
+              <p class="card-text">{{post.location}}</p>
+            </div>
+            <div class="card-footer text-center" style="background-color:  #d6eaf8;">
+              <a href="{% url 'mainapp:details' post.id %}">View Details</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</section>
+
+{% include 'mainapp/footer.html' %}
+{% endblock content %}

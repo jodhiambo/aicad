@@ -1,0 +1,241 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'mainapp/navbar.html' %}<br><br>
+  <!-- ======= Intro Section ======= -->
+  <!-- End Intro Section -->
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="col-md-3">
+      <h4 class="border-bottom border-gray pb-2 mb-0 text-center">Information Update</h4>
+        <div class="card mb-1">
+            <div class="row" style="background-color: #EFFBFB; padding:10px;">
+              <div class="col-md-4">
+                <img src="static/assets/img/plan.jpg" class="card-img" style="height: 20vh; width:15vh;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text">
+                    AICAD has developed a strategic plan for
+                    poverty elevation in the country members and beyond.
+                  </p>
+                  <small class="text-muted">
+                    <a href="static/assets/plan.pdf" target="_blank">click here to download</a>
+                  </small>
+                </div>
+              </div>
+            </div>
+        </div>
+        <main role="main" class="container">
+          <div class="my-3 p-3 bg-white rounded box-shadow">
+            <h4 class="border-bottom border-gray pb-2 mb-0">Latest Updates</h4><br><br>
+            <h6>....Nothing Yet....</h6>
+          </div>
+        </main>
+    </div>
+      <div class="col-md-6">
+        <section id="intro">
+          <div class="intro-container">
+            <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+              <ol class="carousel-indicators"></ol>
+
+              <div class="carousel-inner" role="listbox"><br><br><br>
+
+                <div class="carousel-item active" style="background-image: url('../../static/assets/img/intro-carousel/1.jpg');">
+                  <div class="carousel-container">
+                    <div class="container">
+                      <h2 class="animate__animated animate__fadeInDown">some title</h2>
+                      <p class="animate__animated animate__fadeInUp">some litrature.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item" style="background-image: url('../../static/assets/img/intro-carousel/2.jpg');">
+                  <div class="carousel-container">
+                    <div class="container">
+                      <h2 class="animate__animated animate__fadeInDown">some title</h2>
+                      <p class="animate__animated animate__fadeInUp">some litrature.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item" style="background-image: url('../../static/assets/img/intro-carousel/3.jpg');">
+                  <div class="carousel-container">
+                    <div class="container">
+                      <h2 class="animate__animated animate__fadeInDown">some title</h2>
+                      <p class="animate__animated animate__fadeInUp">some litrature.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item" style="background-image: url('../../static/assets/img/intro-carousel/4.jpg');">
+                  <div class="carousel-container">
+                    <div class="container">
+                      <h2 class="animate__animated animate__fadeInDown">some title</h2>
+                      <p class="animate__animated animate__fadeInUp">some litrature.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item" style="background-image: url('../../static/assets/img/intro-carousel/5.jpg');">
+                  <div class="carousel-container">
+                    <div class="container">
+                      <h2 class="animate__animated animate__fadeInDown">some title</h2>
+                      <p class="animate__animated animate__fadeInUp">some litrature.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('../../static/assets/img/intro-carousel/6.jpg');">
+                  <div class="carousel-container">
+                    <div class="container">
+                      <h2 class="animate__animated animate__fadeInDown">some title</h2>
+                      <p class="animate__animated animate__fadeInUp">some litrature.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('../../static/assets/img/intro-carousel/7.jpg');">
+                  <div class="carousel-container">
+                    <div class="container">
+                      <h2 class="animate__animated animate__fadeInDown">some title</h2>
+                      <p class="animate__animated animate__fadeInUp">some litrature.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+
+              <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+
+            </div>
+          </div>
+        </section>
+      </div><br><br>
+      <div class="col-md-3">
+          <h3 class="section-title"><u>Important Information</u></h3>
+          <p>
+            African Instuitute for Capacity Development (AICAD) is a regional body established by Charter and
+             subscription by the Governments of the Republic of Kenya, the United Republic of Tanzania and the Republic
+              of Uganda dated 10 November, 2003.
+          </p>
+          <p>
+            It was established in the year 2000 with the assistance of the Japanese Government through Japan International
+             Co-operation Agency and is registered in Kenya as a Company Limited by guarantee, Certificate No. C.98855 dated 11th June, 2002.
+          </p>
+      </div>
+</div>
+    <!-- ======= Project Section ======= -->
+
+    <section id="portfolio" class="section-bg">
+      <header class="section-header">
+        <h3 class="section-title">Sample Division Activities</h3>
+      </header>
+        <div class="container" data-aos="fade-up" data-aos-display="100">
+          <div class="row m-auto">
+            {% for post in the_posts %}
+            <div class="col-lg-4 card-group">
+              <div class="card mt-3" style="border-radius: 10%;">
+                <a href="{% url 'mainapp:details' post.id %}">
+                  <img src="{{post.image.url}}" class="card-img-top" alt="" style="height:200px;width:100%;">
+                </a>
+                <div class="card-body">
+                  <a href="{% url 'mainapp:details' post.id %}">
+                    <h4 class="card-title" style="color: #1b3956; text-decoration:center;">{{post.title|lower}}</h4>
+                  </a>
+                  <p class="card-text">{{post.location}}</p>
+                </div>
+                <div class="card-footer text-center" style="background-color:  #d6eaf8;">
+                  <a href="{% url 'mainapp:details' post.id %}">View Details</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="row">
+                <div class="col-12 text-center pt-5">
+                    <a href="{% url 'mainapp:projects' %}" class="btn btn-primary animate-up-2" style="border-radius: 12px;">
+                    VIEW ALL ACTIVITIES</a>
+                </div>
+            </div>
+    </section>
+    <!-- End Project Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>Facts</h3>
+          <p style="font-size: 18px !important; color:white;">
+            Over the years sice the inception of aicad back in 2002,
+            we have manage to reach out and partner with many organizations in different levels.
+          </p>
+        </header>
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">274</span>
+            <p>Clients</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">550</span>
+            <p>Activities</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">421</span>
+            <p>Partners</p>
+          </div>
+
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">58</span>
+            <p>Hard Workers</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Facts Section -->
+
+    <!-- ======= Our Patners Section ======= -->
+    <section id="clients">
+      <div class="container" data-aos="zoom-in">
+
+        <header class="section-header">
+          <h3>Our Partners</h3>
+        </header>
+
+        <div class="owl-carousel clients-carousel">
+          <a href="http://www.ku.ac.ke/" target="_blank">
+            <img src="{% static 'assets/img/clients/kenyatta.png' %}" alt="">
+          </a>
+          <a href="https://www.maseno.ac.ke/" target="_blank">
+            <img src="{% static 'assets/img/clients/maseno.png' %}" alt="">
+          </a>
+          <a href="https://www.must.ac.ug/" target="_blank"><img src="{% static 'assets/img/clients/mbarara.png' %}" alt=""></a>
+          <a href="https://www.uonbi.ac.ke/" target="_blank"><img src="{% static 'assets/img/clients/uon.jpg' %}" alt=""></a>
+          <a href="http://www.mmust.ac.ke/" target="_blank"><img src="{% static 'assets/img/clients/muliro.png' %}" alt=""></a>
+          <a href="https://www.mak.ac.ug/" target="_blank"><img src="{% static 'assets/img/clients/makerere.png' %}" alt=""></a>
+          <a href="http://www.jkuat.ac.ke/" target="_blank"><img src="{% static 'assets/img/clients/jkuat.png' %}" alt=""></a>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Our Clients Section -->
+
+{% include 'mainapp/footer.html' %}
+
+{% endblock content %}
